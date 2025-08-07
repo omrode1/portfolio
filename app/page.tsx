@@ -9,21 +9,30 @@ import Gallery from '@/components/Gallery'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import { FloatingShapes, ScrollProgress, MouseFollower } from '@/components/ScrollAnimations'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Creative />
-      <Gallery />
-      <Blog />
-      <Contact />
-      <Footer />
+    <main className="min-h-screen relative">
+      {/* Background Animations */}
+      <FloatingShapes />
+      <ScrollProgress />
+      <MouseFollower />
+      
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Navigation />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Creative />
+        <Gallery />
+        <Blog />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   )
 }

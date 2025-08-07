@@ -51,7 +51,7 @@ const About = () => {
             </p>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               Previously, I was a Robotics Intern at <span className="text-blue-400 font-medium">Solar Industries India Ltd.</span> 
-              and led the Formula Student team <span className="text-purple-400 font-medium">Ashwariders</span> as Team Captain, 
+              and led the Formula Student team <span className="text-purple-400 font-medium">Formula Ashwariders</span> as Team Captain, 
               focusing on electronics and data acquisition.
             </p>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">

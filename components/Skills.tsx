@@ -2,31 +2,55 @@
 
 import { motion } from 'framer-motion'
 import { FiCode, FiCpu, FiServer, FiTool } from 'react-icons/fi'
+import TechLogo from './TechLogo'
 
 const Skills = () => {
   const skillCategories = [
     {
       icon: <FiCode className="w-6 h-6" />,
       title: "Languages",
-      skills: ["Python", "C++", "Bash"],
+      skills: [
+        { name: "Python", logo: "/images/tech-logos/python.png" },
+        { name: "C++", logo: "/images/tech-logos/cpp.png" },
+        { name: "Bash", logo: "/images/tech-logos/bash.png" }
+      ],
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: <FiCpu className="w-6 h-6" />,
       title: "Frameworks",
-      skills: ["PyTorch", "TensorRT", "FastAPI", "OpenCV", "ROS2"],
+      skills: [
+        { name: "PyTorch", logo: "/images/tech-logos/pytorch.png" },
+        { name: "TensorRT", logo: "/images/tech-logos/tensorrt.png" },
+        { name: "FastAPI", logo: "/images/tech-logos/fastapi.png" },
+        { name: "OpenCV", logo: "/images/tech-logos/opencv.png" },
+        { name: "ROS2", logo: "/images/tech-logos/ros2.png" }
+      ],
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: <FiServer className="w-6 h-6" />,
       title: "DevOps",
-      skills: ["Docker", "Kubernetes", "Git", "Vercel", "AWS"],
+      skills: [
+        { name: "Docker", logo: "/images/tech-logos/docker.png" },
+        { name: "Kubernetes", logo: "/images/tech-logos/kubernetes.png" },
+        { name: "Git", logo: "/images/tech-logos/git.png" },
+        { name: "Vercel", logo: "/images/tech-logos/vercel.png" },
+        { name: "AWS", logo: "/images/tech-logos/aws.png" }
+      ],
       color: "from-green-500 to-teal-500"
     },
     {
       icon: <FiTool className="w-6 h-6" />,
       title: "Tools & Other",
-      skills: ["Kafka", "Redis", "Prometheus", "Grafana", "Embedded C", "Multithreading", "Jetson Deployment", "Model Quantization", "Homography"],
+      skills: [
+        { name: "Kafka", logo: "/images/tech-logos/kafka.png" },
+        { name: "Redis", logo: "/images/tech-logos/redis.png" },
+        { name: "Prometheus", logo: "/images/tech-logos/prometheus.png" },
+        { name: "Grafana", logo: "/images/tech-logos/grafana.png" },
+        { name: "NVIDIA Jetson", logo: "/images/tech-logos/jetson.png" },
+        { name: "Embedded C", logo: "/images/tech-logos/embedded.png" }
+      ],
       color: "from-orange-500 to-red-500"
     }
   ]
@@ -68,7 +92,7 @@ const Skills = () => {
                 {category.title}
               </h3>
               
-              <div className="space-y-2">
+              <div className="grid grid-cols-2 gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
@@ -76,9 +100,16 @@ const Skills = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: (index * 0.1) + (skillIndex * 0.05) }}
                     viewport={{ once: true }}
-                    className="text-gray-300 text-sm bg-gray-900/50 px-3 py-1 rounded-full inline-block mr-2 mb-2 hover:bg-primary-600/20 hover:text-primary-300 transition-all duration-300"
+                    className="flex items-center space-x-2 text-gray-300 text-sm bg-gray-900/50 px-3 py-2 rounded-lg hover:bg-primary-600/20 hover:text-primary-300 transition-all duration-300"
                   >
-                    {skill}
+                    <TechLogo 
+                      name="" 
+                      src={skill.logo} 
+                      alt={`${skill.name} logo`} 
+                      size={20}
+                      className="flex-shrink-0"
+                    />
+                    <span className="truncate">{skill.name}</span>
                   </motion.div>
                 ))}
               </div>

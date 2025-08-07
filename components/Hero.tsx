@@ -1,53 +1,78 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi'
+import { TextReveal } from './ScrollAnimations'
+import MagneticButton from './MagneticButton'
 
 const Hero = () => {
+  const { scrollY } = useScroll()
+  const y = useTransform(scrollY, [0, 500], [0, 150])
+  const opacity = useTransform(scrollY, [0, 300], [1, 0])
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center section-padding">
+    <section id="home" className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden">
       <div className="container-width">
         <div className="text-center">
           <motion.div
+            style={{ y, opacity }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Hi, I'm <span className="gradient-text">Om Rode</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl text-gray-300 mb-8">
-              Computer Vision Engineer & ML Engineer
-            </h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              Hi, I'm{" "}
+              <motion.span 
+                className="gradient-text inline-block"
+                animate={{ 
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+              >
+                Om Rode
+              </motion.span>
+            </motion.h1>
+            
+            <TextReveal 
+              text="Computer Vision Engineer & ML Engineer"
+              className="text-2xl md:text-3xl text-gray-300 mb-8"
+            />
+            
+            <motion.p 
+              className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               Specializing in designing and deploying ML pipelines, RTSP-based systems, 
               YOLO-based custom training, and building robust, production-ready AI systems 
               for real-world automation.
-            </p>
+            </motion.p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
           >
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <MagneticButton
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
             >
               Get In Touch
-            </motion.a>
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            </MagneticButton>
+            <MagneticButton
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="border border-blue-600 text-blue-400 px-8 py-3 rounded-lg font-medium hover:bg-blue-600/10 transition-all duration-300"
             >
               View My Work
-            </motion.a>
+            </MagneticButton>
           </motion.div>
 
           <motion.div

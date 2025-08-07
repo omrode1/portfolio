@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi'
 
@@ -15,7 +16,8 @@ const Experience = () => {
         "Deployed models on Jetson devices with quantization and CUDA acceleration",
         "Optimized real-time video processing systems for industrial automation"
       ],
-      current: true
+      current: true,
+      logo: "/images/companies/quantic-tech.png"
     },
     {
       title: "Robotics Intern",
@@ -27,11 +29,12 @@ const Experience = () => {
         "Developed embedded systems for autonomous operations",
         "Collaborated on safety and monitoring systems"
       ],
-      current: false
+      current: false,
+      logo: "/images/companies/solar-industries.png"
     },
     {
       title: "Team Captain - Electronics & Data Acquisition",
-      company: "Ashwariders (Formula Student Team)",
+      company: "Formula Ashwariders (Formula Student Team)",
       period: "2022 - 2023",
       location: "India",
       description: [
@@ -39,7 +42,8 @@ const Experience = () => {
         "Designed and implemented telemetry systems for race car performance monitoring",
         "Managed cross-functional team coordination and project timelines"
       ],
-      current: false
+      current: false,
+      logo: "/images/companies/formula-ashwariders.png"
     }
   ]
 
@@ -87,13 +91,38 @@ const Experience = () => {
                 {/* Content */}
                 <div className="flex-1 bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-primary-500/50 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-1">
-                        {exp.title}
-                      </h3>
-                      <h4 className="text-lg text-primary-400 font-medium">
-                        {exp.company}
-                      </h4>
+                    <div className="flex items-center space-x-4">
+                      {/* Company Logo */}
+                      {exp.logo && (
+                        <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-lg p-2 flex items-center justify-center">
+                          <Image
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      <div>
+                        <h3 className="text-xl font-semibold text-white mb-1">
+                          {exp.title}
+                        </h3>
+                        <h4 className="text-lg text-primary-400 font-medium">
+                          {exp.company.includes('Formula Ashwariders') ? (
+                            <a 
+                              href="https://www.instagram.com/formula_ashwariders/" 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="hover:text-purple-300 transition-colors duration-300"
+                            >
+                              {exp.company}
+                            </a>
+                          ) : (
+                            exp.company
+                          )}
+                        </h4>
+                      </div>
                     </div>
                     
                     <div className="flex flex-col md:items-end mt-2 md:mt-0">

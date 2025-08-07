@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink, FiCpu, FiCamera, FiZap } from 'react-icons/fi'
+import Card3D from './Card3D'
+import { StaggerContainer, RevealItem } from './ScrollAnimations'
 
 const Projects = () => {
   const projects = [
@@ -62,17 +64,14 @@ const Projects = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-gray-900/50 rounded-xl border border-gray-700 hover:border-primary-500/50 transition-all duration-300 overflow-hidden group"
-            >
+            <RevealItem key={index} direction="up" delay={index * 0.1}>
+              <Card3D className="h-full">
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="bg-gray-900/50 rounded-xl border border-gray-700 hover:border-primary-500/50 transition-all duration-300 overflow-hidden group h-full backdrop-blur-sm"
+                >
               <div className="p-6">
                 <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${project.gradient} mb-4`}>
                   <div className="text-white">
@@ -137,9 +136,11 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-            </motion.div>
+                </motion.div>
+              </Card3D>
+            </RevealItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
