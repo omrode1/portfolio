@@ -3,25 +3,11 @@
 
 export const linkedinPosts = [
   {
-    title: "Building Scalable RTSP Video Processing Pipelines",
+    title: "Graduating from Engineering",
     excerpt: "Sharing insights on optimizing real-time video processing systems for industrial automation. Key learnings from deploying YOLO-based detection at scale...",
     date: "2024-01-15",
-    link: "https://www.linkedin.com/posts/om-rode_computervision-machinelearning-rtsp-activity-7150000000000000000-abcd", // Replace with your actual post URL
+    link: "https://www.linkedin.com/posts/omrode_graduation-engineeringlife-activity-7354882961546141697-KzG9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",
     engagement: "45 likes • 12 comments"
-  },
-  {
-    title: "Edge Deployment with TensorRT: Lessons Learned",
-    excerpt: "Key takeaways from deploying ML models on Jetson devices for production environments. Performance optimization strategies that actually work...",
-    date: "2024-01-08",
-    link: "https://www.linkedin.com/posts/om-rode_tensorrt-jetson-edgeai-activity-7149000000000000000-efgh", // Replace with your actual post URL
-    engagement: "62 likes • 18 comments"
-  },
-  {
-    title: "Computer Vision in Industrial Safety",
-    excerpt: "How we're using YOLO-based detection systems to enhance workplace safety and monitoring. Real-world applications and challenges...",
-    date: "2024-01-02",
-    link: "https://www.linkedin.com/posts/om-rode_industrialsafety-yolo-computervision-activity-7148000000000000000-ijkl", // Replace with your actual post URL
-    engagement: "38 likes • 9 comments"
   }
 ]
 
