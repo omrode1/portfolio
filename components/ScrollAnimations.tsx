@@ -29,7 +29,10 @@ export const FloatingShapes = () => {
       
       {/* Floating Triangle */}
       <motion.div
-        style={{ y: y2 }}
+        style={{ 
+          y: y2,
+          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
+        }}
         className="absolute top-40 left-10 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 blur-lg"
         animate={{
           scale: [1, 0.8, 1],
@@ -39,9 +42,6 @@ export const FloatingShapes = () => {
           duration: 15,
           repeat: Infinity,
           ease: "linear"
-        }}
-        style={{
-          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
         }}
       />
       
