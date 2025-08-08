@@ -9,66 +9,161 @@ import TechLogo from './TechLogo'
 const Projects = () => {
   // Tech logo mapping for projects
   const techLogoMap: { [key: string]: string } = {
-    "Python": "/images/tech-logos/python.svg",
+    "Python": "/images/tech-logos/python.png",
     "PyTorch": "/images/tech-logos/pytorch.svg",
+    "PyTorch Mobile": "/images/tech-logos/pytorch.svg",
     "OpenCV": "/images/tech-logos/opencv.svg",
-    "FastAPI": "/images/tech-logos/fastapi.png",
-    "TensorRT": "/images/tech-logos/tensorrt.png",
-    "Docker": "/images/tech-logos/docker.png",
-    "AWS": "/images/tech-logos/aws.svg",
-    "Redis": "/images/tech-logos/redis.svg",
-    "Prometheus": "/images/tech-logos/prometheus.svg",
-    "Grafana": "/images/tech-logos/grafana.svg",
-    "NVIDIA Jetson": "/images/tech-logos/jetson.svg",
-    "Jetson Xavier": "/images/tech-logos/jetson.svg",
-    "Embedded C": "/images/tech-logos/embedded.png",
-    "Git": "/images/tech-logos/git.png",
-    "Kubernetes": "/images/tech-logos/kubernetes.svg",
-    "Vercel": "/images/tech-logos/vercel.svg",
-    "C++": "/images/tech-logos/cpp.svg",
-    "Bash": "/images/tech-logos/bash.svg",
-    "ROS2": "/images/tech-logos/ros2.svg"
-  }
+    "YOLOv8": "/images/tech-logos/UltralyticsYOLO_full_blue.svg",
+    "Kivy": "/images/tech-logos/kivy.png",
+    "Android Studio": "/images/tech-logos/Android Studio.png",
+    "DRL": "/images/tech-logos/drl.png",
+    "DQN": "/images/tech-logos/dqn.png",
+    "Stable Baselines3": "/images/tech-logos/stable-baselines3.png",
+    "UAVs": "/images/tech-logos/uav.png",
+    "ROS": "/images/tech-logos/ros2.svg",
+    "SLAM": "/images/tech-logos/slam.png",
+    "LiDAR": "/images/tech-logos/lidar.png",
+    "Computer Vision": "/images/tech-logos/opencv.svg",
+    "RTSP": "/images/tech-logos/rtsp.png",
+    "Automation": "/images/tech-logos/automation.png",
+    "Data Analysis": "/images/tech-logos/data-analysis.png",
+    "Raspberry Pi": "/images/tech-logos/Raspberry Pi.png",
+    "Visual Tracking": "/images/tech-logos/tracking.png",
+    "GIS": "/images/tech-logos/gis.png",
+    "Data Visualization": "/images/tech-logos/visualization.png",
+    "Reporting": "/images/tech-logos/reporting.png",
+    "Machine Learning": "/images/tech-logos/ml.png",
+    "Deep Learning": "/images/tech-logos/dl.png",
+    "3D Reconstruction": "/images/tech-logos/3d-reconstruction.png",
+    "Transformers": "/images/tech-logos/transformers.png",
+    "Stereo Vision": "/images/tech-logos/stereo-vision.png",
+    "Image Processing": "/images/tech-logos/image-processing.png",
+    "Pandas": "/images/tech-logos/Pandas.png",
+    "Blender": "/images/tech-logos/Blender.png"
+    
+  };
 
   const projects = [
     {
-      title: "RTSP YOLO API",
-      description: "A scalable API pipeline to consume RTSP streams and run YOLO-based detection with multi-threaded performance. Includes recording functionality for person-specific clips with pre/post buffers.",
-      tech: ["PyTorch", "OpenCV", "FastAPI", "ffmpeg"],
-      github: "https://github.com/omrode1/rtsp_yolo_api",
+      title: "ContextVision",
+      description: "Mobile-based computer vision app that uses YOLOv8 and PyTorch Mobile to detect and describe surrounding objects in real time via Android interface. Designed for visually impaired assistance and context-aware applications.",
+      tech: ["YOLOv8", "PyTorch", "Android Studio"],
+      github: "https://github.com/omrode1/ContextVision",
+      period: "April 2025 – Present",
       icon: <FiCamera className="w-6 h-6" />,
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-cyan-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
     },
     {
-      title: "LPG Cylinder Bottom Classification",
-      description: "Custom-trained EfficientNet-B5 model to classify LPG cylinder conditions into four classes: 'good', 'ring bent', 'ring cut', and 'rust'. Optimized for real-time edge inference using ONNX and TensorRT.",
-      tech: ["PyTorch", "TensorRT", "ONNX", "Jetson Xavier"],
-      deployment: "Deployed on Jetson Xavier",
+      title: "AI Chess Engine – Deep RL",
+      description: "Built and trained a chess-playing AI agent using Deep Reinforcement Learning with DQN, custom reward shaping, and curriculum learning in Stable Baselines3.",
+      tech: ["Python"],
+      github: "https://github.com/omrode1/Chess-Engine-RL",
+      period: "March 2025 – Present",
       icon: <FiCpu className="w-6 h-6" />,
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-500 to-pink-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
     },
     {
-      title: "BEV Perception Pipeline",
-      description: "Worked on transforming camera feeds into Bird's Eye View projections using homography-based mapping and stitching, integrated into real-time monitoring pipelines.",
-      tech: ["OpenCV", "Python", "Homography", "Real-time Processing"],
-      application: "Industrial automation and safety",
+      title: "UAV Obstacle Avoidance",
+      description: "Developed a camera and LiDAR-based system for drones to autonomously detect and avoid obstacles, ensuring safe and efficient flight paths.",
+      tech: ["ROS", "Python", "Computer Vision"],
+      period: "December 2023 – June 2024",
       icon: <FiZap className="w-6 h-6" />,
-      gradient: "from-green-500 to-teal-500"
+      gradient: "from-green-500 to-teal-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
     },
     {
-      title: "Sub-50g Drone Flight Controller",
-      description: "Designed a custom lightweight flight controller for a micro drone with focus on hardware design, embedded C programming, and IMU integration.",
-      tech: ["Embedded C", "IMU", "Hardware Design", "Flight Control"],
+      title: "Operator Occupancy Detection",
+      description: "Implemented a vision-based system to monitor operator presence, log entry/exit times, and generate efficiency reports via RTSP stream analysis.",
+      tech: ["Python", "Computer Vision", "Pandas"],
+      period: "January 2024 – June 2024",
+      icon: <FiCamera className="w-6 h-6" />,
+      gradient: "from-orange-500 to-red-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
+    },
+    {
+      title: "UAV Person Following",
+      description: "Created algorithms enabling drones to detect, track, and follow individuals using onboard vision and path-planning systems.",
+      tech: ["UAVs", "Computer Vision", "Python", "Raspberry Pi", "Visual Tracking"],
+      period: "December 2023 – June 2024",
       icon: <FiZap className="w-6 h-6" />,
-      gradient: "from-orange-500 to-red-500"
+      gradient: "from-indigo-500 to-purple-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
     },
     {
-      title: "AI Incident Response Dashboard",
-      description: "End-to-end system for real-time log ingestion, AI anomaly detection, and automated system recovery visualized via a React-D3 dashboard.",
-      tech: ["Kafka", "FastAPI", "PyTorch", "React", "Docker", "AWS"],
-      status: "In Progress",
+      title: "ADAS Road Safety Analysis",
+      description: "Analyzed Advanced Driver Assistance System alert data to identify accident-prone zones and road safety trends in Chennai.",
+      tech: ["Python", "Pandas"],
+      period: "August 2023 – September 2023",
       icon: <FiCpu className="w-6 h-6" />,
-      gradient: "from-indigo-500 to-purple-500"
+      gradient: "from-yellow-500 to-orange-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
+    },
+    {
+      title: "Foreign Object Detection – Intel Unnati Challenge",
+      description: "Built a prototype to detect debris on airport runways in real time using OpenCV, improving runway safety.",
+      tech: ["Python", "OpenCV", "YOLOv8"],
+      period: "October 2022 – January 2023",
+      icon: <FiCamera className="w-6 h-6" />,
+      gradient: "from-red-500 to-pink-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
+    },
+    {
+      title: "Multi-View 3D Face Reconstruction",
+      description: "Designed a learning-based pipeline to generate textured 3D face meshes from 3–4 RGB images taken from fixed viewpoints.",
+      tech: ["Blender", "Python"],
+      period: "February 2025 – Present",
+      github: "https://github.com/omrode1/3d_face_recon",
+      icon: <FiCpu className="w-6 h-6" />,
+      gradient: "from-cyan-500 to-blue-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
+    },
+    {
+      title: "Monocular Depth Estimation",
+      description: "Implemented monocular depth prediction using the Monodepth2 architecture in PyTorch for dense scene understanding from single images.",
+      tech: ["PyTorch", "OpenCV"],
+      period: "May 2025 – Present",
+      github: "https://github.com/omrode1/monocular_depth_estimation_v1",
+      icon: <FiCamera className="w-6 h-6" />,
+      gradient: "from-emerald-500 to-teal-500",
+      media: {
+        images: [],
+        videos: [],
+        documents: []
+      }
     }
   ]
 
@@ -111,26 +206,10 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {project.deployment && (
+                {project.period && (
                   <div className="mb-4">
-                    <span className="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">
-                      {project.deployment}
-                    </span>
-                  </div>
-                )}
-
-                {project.application && (
-                  <div className="mb-4">
-                    <span className="text-sm text-accent-300 font-medium">
-                      Application: {project.application}
-                    </span>
-                  </div>
-                )}
-
-                {project.status && (
-                  <div className="mb-4">
-                    <span className="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">
-                      {project.status}
+                    <span className="text-sm bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full">
+                      {project.period}
                     </span>
                   </div>
                 )}

@@ -10,7 +10,7 @@ const Skills = () => {
       icon: <FiCode className="w-6 h-6" />,
       title: "Languages",
       skills: [
-        { name: "Python", logo: "/images/tech-logos/python.svg" },
+        { name: "Python", logo: "/images/tech-logos/python.png" },
         { name: "C++", logo: "/images/tech-logos/cpp.svg" },
         { name: "Bash", logo: "/images/tech-logos/bash.svg" }
       ],

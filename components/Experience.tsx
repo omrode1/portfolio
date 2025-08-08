@@ -8,42 +8,55 @@ const Experience = () => {
   const experiences = [
     {
       title: "Computer Vision Engineer",
-      company: "Quantic Tech Analysis",
+      company: "Quantic Tech Analysis Private Limited",
       period: "July 2024 – Present",
-      location: "Remote",
+      location: "Chennai, India",
       description: [
         "Developed ML pipelines for object detection and anomaly tracking in RTSP video environments",
         "Deployed models on Jetson devices with quantization and CUDA acceleration",
         "Optimized real-time video processing systems for industrial automation"
       ],
       current: true,
-      logo: "/images/companies/quantic-tech.png"
+      logo: "/images/companies/quantic_tech_analysis_private_limited_logo.jpeg"
     },
     {
-      title: "Robotics Intern",
+      title: "Robotics Intern - Computer Vision",
       company: "Solar Industries India Ltd.",
-      period: "2023",
-      location: "India",
+      period: "November 2023 - June 2024",
+      location: "Nagpur, India",
       description: [
         "Worked on robotics automation systems for industrial applications",
-        "Developed embedded systems for autonomous operations",
+        "Developed embedded systems for autonomous operations", 
         "Collaborated on safety and monitoring systems"
       ],
       current: false,
-      logo: "/images/companies/solar-industries.png"
+      logo: "/images/companies/Solar.png"
     },
     {
-      title: "Team Captain - Electronics & Data Acquisition",
-      company: "Formula Ashwariders (Formula Student Team)",
-      period: "2022 - 2023",
-      location: "India",
+      title: "Team Captain",
+      company: "Formula Ashwariders",
+      period: "April 2023 - May 2024",
+      location: "Nagpur, India",
       description: [
-        "Led the Formula Student team focusing on electronics and data acquisition systems",
-        "Designed and implemented telemetry systems for race car performance monitoring",
-        "Managed cross-functional team coordination and project timelines"
+        "Led a multidisciplinary team of 27 members, ensuring optimal role allocation and performance across subsystems",
+        "Managed team finances, budget planning, and resource allocation to support design, fabrication, and competition activities",
+        "Represented the team at national and international Formula Student events, fostering industry connections and securing sponsorship opportunities"
       ],
       current: false,
-      logo: "/images/companies/formula-ashwariders.png"
+      logo: "/images/companies/Formula_Ashwariders.jpeg"
+    },
+    {
+      title: "Control Electronics and DAQ Sub-team Member",
+      company: "Formula Ashwariders",
+      period: "October 2021 - March 2023",
+      location: "Nagpur, India",
+      description: [
+        "Designed and fabricated a custom electrical wiring harness for the vehicle, ensuring robust connectivity and performance",
+        "Developed and implemented the vehicle's data acquisition system, enabling real-time logging of engine parameters and correlating them with GPS data from a mobile unit",
+        "Conducted troubleshooting and diagnostics to ensure system reliability during testing and competition phases"
+      ],
+      current: false,
+      logo: "/images/companies/Formula_Ashwariders.jpeg"
     }
   ]
 
