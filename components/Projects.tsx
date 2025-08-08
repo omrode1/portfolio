@@ -4,8 +4,32 @@ import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink, FiCpu, FiCamera, FiZap } from 'react-icons/fi'
 import Card3D from './Card3D'
 import { StaggerContainer, RevealItem } from './ScrollAnimations'
+import TechLogo from './TechLogo'
 
 const Projects = () => {
+  // Tech logo mapping for projects
+  const techLogoMap: { [key: string]: string } = {
+    "Python": "/images/tech-logos/python.svg",
+    "PyTorch": "/images/tech-logos/pytorch.svg",
+    "OpenCV": "/images/tech-logos/opencv.svg",
+    "FastAPI": "/images/tech-logos/fastapi.png",
+    "TensorRT": "/images/tech-logos/tensorrt.png",
+    "Docker": "/images/tech-logos/docker.png",
+    "AWS": "/images/tech-logos/aws.svg",
+    "Redis": "/images/tech-logos/redis.svg",
+    "Prometheus": "/images/tech-logos/prometheus.svg",
+    "Grafana": "/images/tech-logos/grafana.svg",
+    "NVIDIA Jetson": "/images/tech-logos/jetson.svg",
+    "Jetson Xavier": "/images/tech-logos/jetson.svg",
+    "Embedded C": "/images/tech-logos/embedded.png",
+    "Git": "/images/tech-logos/git.png",
+    "Kubernetes": "/images/tech-logos/kubernetes.svg",
+    "Vercel": "/images/tech-logos/vercel.svg",
+    "C++": "/images/tech-logos/cpp.svg",
+    "Bash": "/images/tech-logos/bash.svg",
+    "ROS2": "/images/tech-logos/ros2.svg"
+  }
+
   const projects = [
     {
       title: "RTSP YOLO API",
@@ -111,15 +135,48 @@ const Projects = () => {
                   </div>
                 )}
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-md"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="mb-6">
+                  <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies Used:</h4>
+                  <div className="grid grid-cols-3 gap-4">
+                    {project.tech.map((tech, techIndex) => {
+                      const logoPath = techLogoMap[tech];
+                      return (
+                        <motion.div
+                          key={techIndex}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: techIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex flex-col items-center group/tech"
+                        >
+                          <motion.div
+                            whileHover={{ 
+                              scale: 1.05,
+                              boxShadow: "0 0 15px rgba(59, 130, 246, 0.2)"
+                            }}
+                            className="bg-gray-800/70 p-3 rounded-lg border border-gray-700 hover:border-primary-500/50 transition-all duration-300 cursor-pointer"
+                          >
+                            {logoPath ? (
+                              <TechLogo 
+                                name="" 
+                                src={logoPath} 
+                                alt={`${tech} logo`} 
+                                size={40}
+                                className="flex-shrink-0"
+                              />
+                            ) : (
+                              <div className="w-8 h-8 bg-gray-600 rounded flex-shrink-0"></div>
+                            )}
+                          </motion.div>
+                          
+                          {/* Label */}
+                          <span className="text-xs text-gray-400 text-center mt-2 font-medium">
+                            {tech}
+                          </span>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 <div className="flex space-x-4">

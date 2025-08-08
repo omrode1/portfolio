@@ -94,13 +94,13 @@ const Experience = () => {
                     <div className="flex items-center space-x-4">
                       {/* Company Logo */}
                       {exp.logo && (
-                        <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-lg p-2 flex items-center justify-center">
+                        <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-lg p-2 flex items-center justify-center relative">
                           <Image
                             src={exp.logo}
                             alt={`${exp.company} logo`}
-                            width={32}
-                            height={32}
+                            fill
                             className="object-contain"
+                            sizes="32px"
                           />
                         </div>
                       )}

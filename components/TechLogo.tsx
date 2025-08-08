@@ -11,23 +11,27 @@ interface TechLogoProps {
   className?: string
 }
 
-const TechLogo = ({ name, src, alt, size = 32, className = "" }: TechLogoProps) => {
+const TechLogo = ({ name, src, alt, size = 50, className = "" }: TechLogoProps) => {
   return (
     <motion.div
       whileHover={{ scale: 1.1 }}
-      className={`flex flex-col items-center space-y-2 p-2 ${className}`}
+      className={`flex items-center justify-center p-2 ${className}`}
     >
-      <div className="relative">
+      <div 
+        className="relative flex items-center justify-center"
+        style={{ width: size, height: size }}
+      >
         <Image
           src={src}
           alt={alt}
           width={size}
           height={size}
-          className="object-contain"
+          className="object-contain w-full h-full"
           loading="lazy"
+          sizes={`${size}px`}
+          style={{ objectFit: 'contain' }}
         />
       </div>
-      <span className="text-xs text-gray-400 text-center">{name}</span>
     </motion.div>
   )
 }

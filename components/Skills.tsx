@@ -10,9 +10,9 @@ const Skills = () => {
       icon: <FiCode className="w-6 h-6" />,
       title: "Languages",
       skills: [
-        { name: "Python", logo: "/images/tech-logos/python.png" },
-        { name: "C++", logo: "/images/tech-logos/cpp.png" },
-        { name: "Bash", logo: "/images/tech-logos/bash.png" }
+        { name: "Python", logo: "/images/tech-logos/python.svg" },
+        { name: "C++", logo: "/images/tech-logos/cpp.svg" },
+        { name: "Bash", logo: "/images/tech-logos/bash.svg" }
       ],
       color: "from-blue-500 to-cyan-500"
     },
@@ -20,11 +20,11 @@ const Skills = () => {
       icon: <FiCpu className="w-6 h-6" />,
       title: "Frameworks",
       skills: [
-        { name: "PyTorch", logo: "/images/tech-logos/pytorch.png" },
+        { name: "PyTorch", logo: "/images/tech-logos/pytorch.svg" },
         { name: "TensorRT", logo: "/images/tech-logos/tensorrt.png" },
         { name: "FastAPI", logo: "/images/tech-logos/fastapi.png" },
-        { name: "OpenCV", logo: "/images/tech-logos/opencv.png" },
-        { name: "ROS2", logo: "/images/tech-logos/ros2.png" }
+        { name: "OpenCV", logo: "/images/tech-logos/opencv.svg" },
+        { name: "ROS2", logo: "/images/tech-logos/ros2.svg" }
       ],
       color: "from-purple-500 to-pink-500"
     },
@@ -33,10 +33,10 @@ const Skills = () => {
       title: "DevOps",
       skills: [
         { name: "Docker", logo: "/images/tech-logos/docker.png" },
-        { name: "Kubernetes", logo: "/images/tech-logos/kubernetes.png" },
+        { name: "Kubernetes", logo: "/images/tech-logos/kubernetes.svg" },
         { name: "Git", logo: "/images/tech-logos/git.png" },
-        { name: "Vercel", logo: "/images/tech-logos/vercel.png" },
-        { name: "AWS", logo: "/images/tech-logos/aws.png" }
+        { name: "Vercel", logo: "/images/tech-logos/vercel.svg" },
+        { name: "AWS", logo: "/images/tech-logos/aws.svg" }
       ],
       color: "from-green-500 to-teal-500"
     },
@@ -44,11 +44,10 @@ const Skills = () => {
       icon: <FiTool className="w-6 h-6" />,
       title: "Tools & Other",
       skills: [
-        { name: "Kafka", logo: "/images/tech-logos/kafka.png" },
-        { name: "Redis", logo: "/images/tech-logos/redis.png" },
-        { name: "Prometheus", logo: "/images/tech-logos/prometheus.png" },
-        { name: "Grafana", logo: "/images/tech-logos/grafana.png" },
-        { name: "NVIDIA Jetson", logo: "/images/tech-logos/jetson.png" },
+        { name: "Redis", logo: "/images/tech-logos/redis.svg" },
+        { name: "Prometheus", logo: "/images/tech-logos/prometheus.svg" },
+        { name: "Grafana", logo: "/images/tech-logos/grafana.svg" },
+        { name: "NVIDIA Jetson", logo: "/images/tech-logos/jetson.svg" },
         { name: "Embedded C", logo: "/images/tech-logos/embedded.png" }
       ],
       color: "from-orange-500 to-red-500"
@@ -68,6 +67,9 @@ const Skills = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Skills & <span className="gradient-text">Tech Stack</span>
           </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
+            Specializing in AI, Computer Vision, DevOps, and Embedded Systems
+          </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto"></div>
         </motion.div>
 
@@ -80,38 +82,64 @@ const Skills = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-primary-500/50 transition-all duration-300"
+              className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 hover:border-primary-500/50 transition-all duration-300 relative overflow-hidden group"
             >
-              <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${category.color} mb-4`}>
-                <div className="text-white">
-                  {category.icon}
+              {/* Subtle gradient background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+              
+              <div className="relative z-10">
+                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${category.color} mb-6 shadow-lg`}>
+                  <div className="text-white">
+                    {category.icon}
+                  </div>
                 </div>
-              </div>
-              
-              <h3 className="text-xl font-semibold text-white mb-4">
-                {category.title}
-              </h3>
-              
-              <div className="grid grid-cols-2 gap-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: (index * 0.1) + (skillIndex * 0.05) }}
-                    viewport={{ once: true }}
-                    className="flex items-center space-x-2 text-gray-300 text-sm bg-gray-900/50 px-3 py-2 rounded-lg hover:bg-primary-600/20 hover:text-primary-300 transition-all duration-300"
-                  >
-                    <TechLogo 
-                      name="" 
-                      src={skill.logo} 
-                      alt={`${skill.name} logo`} 
-                      size={20}
-                      className="flex-shrink-0"
-                    />
-                    <span className="truncate">{skill.name}</span>
-                  </motion.div>
-                ))}
+                
+                <h3 className="text-xl font-semibold text-white mb-6">
+                  {category.title}
+                </h3>
+                
+                <div className="grid grid-cols-2 gap-6">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skillIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: (index * 0.1) + (skillIndex * 0.05) }}
+                      viewport={{ once: true }}
+                      className="flex flex-col items-center group/skill"
+                    >
+                      <div className="relative">
+                        <motion.div
+                          whileHover={{ 
+                            scale: 1.1,
+                            boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)"
+                          }}
+                          className="bg-gray-900/70 p-4 rounded-xl border border-gray-700 hover:border-primary-500/50 transition-all duration-300 cursor-pointer"
+                        >
+                          <TechLogo 
+                            name="" 
+                            src={skill.logo} 
+                            alt={`${skill.name} logo`} 
+                            size={48}
+                            className="flex-shrink-0"
+                          />
+                        </motion.div>
+                        
+                        {/* Tooltip */}
+                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 pointer-events-none">
+                          <div className="bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap border border-gray-700">
+                            {skill.name}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Label */}
+                      <span className="text-xs text-gray-400 text-center mt-3 font-medium">
+                        {skill.name}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -123,9 +151,9 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-20 text-center"
         >
-          <div className="bg-gradient-to-r from-primary-600/10 to-accent-600/10 border border-primary-500/20 rounded-xl p-8">
+          <div className="bg-gradient-to-r from-primary-600/10 to-accent-600/10 border border-primary-500/20 rounded-xl p-8 backdrop-blur-sm">
             <h3 className="text-2xl font-semibold text-white mb-4">
               Specialized In
             </h3>
