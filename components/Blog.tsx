@@ -1,7 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FiExternalLink, FiLinkedin, FiCalendar } from 'react-icons/fi'
+import { FiExternalLink, FiLinkedin, FiCalendar, FiTag } from 'react-icons/fi'
 import { linkedinPosts } from '@/data/social-posts'
 
 const Blog = () => {
@@ -36,18 +37,40 @@ const Blog = () => {
               whileHover={{ y: -5 }}
               className="bg-gray-800/50 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300 overflow-hidden group"
             >
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-blue-600/20 rounded-lg mr-3">
-                    <FiLinkedin className="w-5 h-5 text-blue-400" />
+              {/* Post Image */}
+              {post.image && (
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  {/* Category Badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                      <FiTag className="w-3 h-3 mr-1" />
+                      {post.category}
+                    </span>
                   </div>
-                  <div className="flex items-center text-sm text-gray-400">
-                    <FiCalendar className="w-4 h-4 mr-1" />
-                    {new Date(post.date).toLocaleDateString('en-US', { 
-                      month: 'short', 
-                      day: 'numeric', 
-                      year: 'numeric' 
-                    })}
+                </div>
+              )}
+
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="p-2 bg-blue-600/20 rounded-lg mr-3">
+                      <FiLinkedin className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div className="flex items-center text-sm text-gray-400">
+                      <FiCalendar className="w-4 h-4 mr-1" />
+                      {new Date(post.date).toLocaleDateString('en-US', { 
+                        month: 'short', 
+                        day: 'numeric', 
+                        year: 'numeric' 
+                      })}
+                    </div>
                   </div>
                 </div>
 
@@ -55,7 +78,7 @@ const Blog = () => {
                   {post.title}
                 </h3>
 
-                <p className="text-gray-300 mb-4 leading-relaxed">
+                <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
 

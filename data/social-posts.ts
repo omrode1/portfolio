@@ -1,15 +1,55 @@
 // Update this file with your latest LinkedIn posts and Instagram content
 // This is the easiest way to keep your social content fresh without API complications
 
+import { title } from "process"
+
 export const linkedinPosts = [
   {
     title: "Graduating from Engineering",
-    excerpt: "Graduated from SVPCET Nagpur with a degree in Electronics and Telecommunication Engineering. I'm excited to start my career as a Software Engineer at Infosys.",
-    date: "2024-01-15",
+    excerpt: "Graduated from SVPCET Nagpur with a degree in Electronics and Telecommunication Engineering. Excited to start my journey in Computer Vision and Machine Learning!",
+    date: "2024-26-07",
     link: "https://www.linkedin.com/posts/omrode_graduation-engineeringlife-activity-7354882961546141697-KzG9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",
-    engagement: "45 likes • 12 comments"
+    engagement: "450 likes • 50 comments",
+    image: "/images/linkedin-posts/linkedin1.jpg",
+    category: "Milestone"
+  }, 
+  {
+    title: "Successful Deployment  of QASS AI",
+    excerpt: "Deployed QASS AI, a AI powered sysstem for identifying and classifying the quality of the high voltage power lines.",
+    date: "2024-07-08",
+    link: "https://www.linkedin.com/posts/omrode_over-the-years-ive-observed-founders-activity-7236995692651528193-iX3l?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",
+    engagement: "100 likes • 10 comments",
+    image: "/images/linkedin-posts/post2.jpeg",
+    category: "Project"
+  }, 
+  {
+    title:"Joined Quantic As a Computer Vision Engineer",
+    excerpt: "Joined Quantic as a Computer Vision Engineer.",
+    date: "2024-07-07",
+    link: "https://www.linkedin.com/posts/omrode_newjob-computervision-ai-activity-7220840797036814337-2uL7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",
+    engagement: "200 likes • 10 comments",
+    image: "/images/linkedin-posts/post3.jpeg",
+    category: "Experience"
+  }, 
+  {
+    title: "Completed Robotics internship at Solar Industries India limited",
+    excerpt: "Completed Robotics internship at Solar Industries India limited. Worked on the development of autnomous drones with computer vision.",
+    date: "2024-06-07",
+    link: "https://www.linkedin.com/posts/omrode_growth-cv-robotics-activity-7218294739983343617-7099?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",
+    engagement: "100 likes • 10 comments",
+    image: "/images/linkedin-posts/post4.jpeg",
+    category: "Experience"
+  }, 
+  {
+    title: "Time to say goodbye to my college",
+    excerpt: "Time to say goodbye to my college. It was a great journey and I'm grateful for the memories I've made here.",
+    date: "2024-06-05",
+    link: "https://www.linkedin.com/posts/omrode_growth-cv-robotics-activity-7218294739983343617-7099?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",
+    engagement: "1000 likes • 100 comments",
+    image: "/images/linkedin-posts/post5.jpeg",
+    category: "Experience"
   }
-]
+  ]
 
 export const instagramPosts = [
   { 

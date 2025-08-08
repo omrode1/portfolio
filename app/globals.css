@@ -56,6 +56,13 @@
     overflow: hidden;
   }
 
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   /* Loading animation for images */
   .image-loading {
     @apply animate-pulse bg-gray-300 dark:bg-gray-700;
