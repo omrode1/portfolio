@@ -45,20 +45,23 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              I'm a passionate Computer Vision Engineer currently working at <span className="text-blue-400 font-medium">Quantic Tech Analysis</span>, 
-              where I develop ML pipelines for object detection and anomaly tracking in RTSP video environments.
-            </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              Previously, I was a Robotics Intern at <span className="text-blue-400 font-medium">Solar Industries India Ltd.</span> 
-              and led the Formula Student team <span className="text-purple-400 font-medium">Formula Ashwariders</span> as Team Captain, 
-              focusing on electronics and data acquisition.
-            </p>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              My core strengths lie in designing and deploying ML pipelines, working with RTSP-based systems, 
-              YOLO-based custom training, CUDA optimization, and multi-threaded applications. I'm currently 
-              focused on building robust, production-ready AI systems for real-world automation.
-            </p>
+        <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+  I’m a Computer Vision Engineer at <span className="text-blue-400 font-medium">Quantic Tech Analysis</span>, 
+  where I design and deploy ML pipelines for object detection and anomaly tracking in real-time RTSP video streams.
+</p>
+
+<p className="text-lg text-gray-300 mb-6 leading-relaxed">
+  Previously, I was a Robotics Intern at <span className="text-blue-400 font-medium">Solar Industries India Ltd.</span> 
+  and served as Team Captain of <span className="text-purple-400 font-medium">Formula Ashwariders</span> in Formula Student, 
+  leading electronics and data acquisition while managing a 27-member team.
+</p>
+
+<p className="text-lg text-gray-300 mb-8 leading-relaxed">
+  My expertise includes YOLO-based custom training, CUDA optimization, multi-threaded Python development, 
+  and robust RTSP-based deployments. I focus on building production-ready AI systems that move seamlessly 
+  from prototype to real-world automation.
+</p>
+
           </motion.div>
 
           <motion.div

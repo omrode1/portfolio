@@ -40,7 +40,6 @@ const Projects = () => {
     "Image Processing": "/images/tech-logos/image-processing.png",
     "Pandas": "/images/tech-logos/Pandas.png",
     "Blender": "/images/tech-logos/Blender.png"
-    
   };
 
   const projects = [
@@ -101,7 +100,7 @@ const Projects = () => {
     {
       title: "UAV Person Following",
       description: "Created algorithms enabling drones to detect, track, and follow individuals using onboard vision and path-planning systems.",
-      tech: ["UAVs", "Computer Vision", "Python", "Raspberry Pi", "Visual Tracking"],
+      tech: ["Computer Vision", "Python", "Raspberry Pi"],
       period: "December 2023 – June 2024",
       icon: <FiZap className="w-6 h-6" />,
       gradient: "from-indigo-500 to-purple-500",
