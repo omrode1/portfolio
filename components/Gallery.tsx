@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FiZoomIn, FiExternalLink } from 'react-icons/fi'
 
@@ -42,15 +43,15 @@ const Gallery = () => {
       title: "Pixel 6a Photography Session",
       category: "Creative",
       description: "Capturing moments with computational photography",
-      image: "/api/placeholder/400/300",
+      image: "/images/gallery/PXL_20250720_110557084.jpg",
       type: "creative"
     },
     {
       id: 6,
-      title: "Premiere Pro Editing Timeline",
-      category: "Creative",
-      description: "Video editing workflow and post-production process",
-      image: "/api/placeholder/400/300",
+      title: "Creative Tech Photography",
+      category: "Creative", 
+      description: "Where engineering meets art - creative perspective",
+      image: "/images/gallery/PXL_20241102_192838224.jpg",
       type: "creative"
     }
   ]
@@ -114,15 +115,26 @@ const Gallery = () => {
             >
               {/* Image Container */}
               <div className="relative aspect-video bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
-                {/* Placeholder for actual image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gray-700 rounded-lg flex items-center justify-center mb-3 mx-auto">
-                      <FiZoomIn className="w-8 h-8 text-gray-400" />
+                {item.image.includes('PXL_') ? (
+                  /* Real image */
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                ) : (
+                  /* Placeholder for missing images */
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gray-700 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                        <FiZoomIn className="w-8 h-8 text-gray-400" />
+                      </div>
+                      <p className="text-sm text-gray-400">Image Placeholder</p>
                     </div>
-                    <p className="text-sm text-gray-400">Image Placeholder</p>
                   </div>
-                </div>
+                )}
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

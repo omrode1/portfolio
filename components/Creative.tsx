@@ -1,7 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FiInstagram, FiCamera, FiVideo, FiEdit3, FiExternalLink } from 'react-icons/fi'
+import { instagramPosts } from '@/data/social-posts'
 
 const Creative = () => {
   const filmingSkills = [
@@ -25,37 +27,7 @@ const Creative = () => {
     }
   ]
 
-  // Placeholder Instagram posts - in a real implementation, you'd use Instagram Basic Display API
-  const instagramPosts = [
-    {
-      id: 1,
-      image: "/api/placeholder/300/300",
-      caption: "Behind the scenes of a tech project shoot 📱✨",
-      likes: 45,
-      link: "https://www.instagram.com/om_rode.exe/"
-    },
-    {
-      id: 2,
-      image: "/api/placeholder/300/300",
-      caption: "Experimenting with new camera angles 🎬",
-      likes: 32,
-      link: "https://www.instagram.com/om_rode.exe/"
-    },
-    {
-      id: 3,
-      image: "/api/placeholder/300/300",
-      caption: "Pixel 6a capturing the perfect moment 📸",
-      likes: 58,
-      link: "https://www.instagram.com/om_rode.exe/"
-    },
-    {
-      id: 4,
-      image: "/api/placeholder/300/300",
-      caption: "Late night editing session in Premiere Pro 🌙",
-      likes: 41,
-      link: "https://www.instagram.com/om_rode.exe/"
-    }
-  ]
+
 
   return (
     <section id="creative" className="section-padding bg-gray-800/50">
@@ -174,16 +146,21 @@ const Creative = () => {
                 whileHover={{ scale: 1.05 }}
                 className="group relative aspect-square bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-pink-500/50 transition-all duration-300"
               >
-                {/* Placeholder for Instagram image */}
-                <div className="w-full h-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center">
-                  <FiCamera className="w-12 h-12 text-gray-400 group-hover:text-pink-400 transition-colors duration-300" />
-                </div>
+                {/* Real Instagram image */}
+                <Image
+                  src={post.image}
+                  alt={`Instagram post ${post.id}`}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center text-white">
+                  <div className="text-center text-white p-4">
                     <FiInstagram className="w-6 h-6 mx-auto mb-2" />
-                    <p className="text-sm font-medium">{post.likes} likes</p>
+                    <p className="text-sm font-medium mb-1">{post.likes} likes</p>
+                    <p className="text-xs text-gray-200 line-clamp-2">{post.caption}</p>
                   </div>
                 </div>
               </motion.a>
