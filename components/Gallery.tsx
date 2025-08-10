@@ -72,7 +72,7 @@ const Gallery = () => {
             Visual <span className="gradient-text">Gallery</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             A glimpse into my work, projects, and creative journey through images
           </p>
         </motion.div>

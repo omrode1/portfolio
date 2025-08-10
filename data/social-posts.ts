@@ -1,13 +1,11 @@
 // Update this file with your latest LinkedIn posts and Instagram content
 // This is the easiest way to keep your social content fresh without API complications
 
-import { title } from "process"
-
 export const linkedinPosts = [
   {
     title: "Graduating from Engineering",
     excerpt: "Graduated from SVPCET Nagpur with a degree in Electronics and Telecommunication Engineering. Excited to start my journey in Computer Vision and Machine Learning!",
-    date: "2024-26-07",
+    date: "2024-07-26",
     link: "https://www.linkedin.com/posts/omrode_graduation-engineeringlife-activity-7354882961546141697-KzG9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",
     engagement: "450 likes • 50 comments",
     image: "/images/linkedin-posts/linkedin1.jpg",
@@ -23,7 +21,7 @@ export const linkedinPosts = [
     category: "Project"
   }, 
   {
-    title:"Joined Quantic As a Computer Vision Engineer",
+    title: "Joined Quantic As a Computer Vision Engineer",
     excerpt: "Joined Quantic as a Computer Vision Engineer.",
     date: "2024-07-07",
     link: "https://www.linkedin.com/posts/omrode_newjob-computervision-ai-activity-7220840797036814337-2uL7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOwxG0B3IUoieFh4qYCg7Pq3JZFhTfbkQ8",

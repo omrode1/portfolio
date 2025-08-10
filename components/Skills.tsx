@@ -94,7 +94,7 @@ const Skills = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-white mb-6">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                   {category.title}
                 </h3>
                 
@@ -134,7 +134,7 @@ const Skills = () => {
                       </div>
                       
                       {/* Label */}
-                      <span className="text-xs text-gray-400 text-center mt-3 font-medium">
+                      <span className="text-xs text-gray-600 dark:text-gray-400 text-center mt-3 font-medium">
                         {skill.name}
                       </span>
                     </motion.div>
@@ -154,16 +154,16 @@ const Skills = () => {
           className="mt-20 text-center"
         >
           <div className="bg-gradient-to-r from-primary-600/10 to-accent-600/10 border border-primary-500/20 rounded-xl p-8 backdrop-blur-sm">
-            <h3 className="text-2xl font-semibold text-white mb-4">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               Specialized In
             </h3>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
-              <span className="text-primary-400 font-medium">RTSP-based systems</span> • 
-              <span className="text-accent-400 font-medium"> YOLO-based custom training</span> • 
-              <span className="text-primary-400 font-medium"> CUDA optimization</span> • 
-              <span className="text-accent-400 font-medium"> Multi-threaded applications</span> • 
-              <span className="text-primary-400 font-medium"> Jetson deployment</span> • 
-              <span className="text-accent-400 font-medium"> Model quantization</span>
+            <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+              <span className="text-blue-600 dark:text-primary-400 font-medium">RTSP-based systems</span> • 
+              <span className="text-purple-600 dark:text-accent-400 font-medium"> YOLO-based custom training</span> • 
+              <span className="text-blue-600 dark:text-primary-400 font-medium"> CUDA optimization</span> • 
+              <span className="text-purple-600 dark:text-accent-400 font-medium"> Multi-threaded applications</span> • 
+              <span className="text-blue-600 dark:text-primary-400 font-medium"> Jetson deployment</span> • 
+              <span className="text-purple-600 dark:text-accent-400 font-medium"> Model quantization</span>
             </p>
           </div>
         </motion.div>

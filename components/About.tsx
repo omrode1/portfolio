@@ -23,7 +23,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="section-padding bg-gray-800/50">
+    <section id="about" className="section-padding bg-gray-100/50 dark:bg-gray-800/50">
       <div className="container-width">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -75,17 +75,17 @@ const About = () => {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="bg-gray-900/50 p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+                className="bg-white/70 dark:bg-gray-900/50 p-6 rounded-xl border border-gray-300 dark:border-gray-700 hover:border-blue-500/50 transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
                   <div className="text-blue-400 mt-1">
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300">
+                    <p className="text-gray-700 dark:text-gray-300">
                       {item.description}
                     </p>
                   </div>

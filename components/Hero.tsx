@@ -58,12 +58,12 @@ const Hero = () => {
             
             <TextReveal 
               text="Computer Vision Engineer & ML Engineer"
-              className="text-2xl md:text-3xl text-gray-300 mb-8"
+              className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8"
             />
             
             <motion.p 
               ref={descriptionRef}
-              className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
+              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -104,7 +104,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <FiGithub size={24} />
             </motion.a>
@@ -113,14 +113,14 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: -5 }}
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <FiLinkedin size={24} />
             </motion.a>
             <motion.a
               href="mailto:omrode1@gmail.com"
               whileHover={{ scale: 1.2, rotate: 5 }}
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <FiMail size={24} />
             </motion.a>
@@ -138,7 +138,7 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center cursor-pointer"
+          className="w-6 h-10 border-2 border-gray-400 dark:border-gray-400 rounded-full flex justify-center cursor-pointer"
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
         >
           <motion.div

@@ -167,7 +167,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="section-padding bg-gray-800/50">
+    <section id="projects" className="section-padding bg-gray-100/50 dark:bg-gray-800/50">
       <div className="container-width">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

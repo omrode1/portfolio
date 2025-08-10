@@ -102,7 +102,7 @@ const Experience = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-primary-500/50 transition-all duration-300">
+                <div className="flex-1 bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-300 dark:border-gray-700 hover:border-blue-500/50 dark:hover:border-primary-500/50 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div className="flex items-center space-x-4">
                       {/* Company Logo */}
@@ -118,7 +118,7 @@ const Experience = () => {
                         </div>
                       )}
                       <div>
-                        <h3 className="text-xl font-semibold text-white mb-1">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
                           {exp.title}
                         </h3>
                         <h4 className="text-lg text-primary-400 font-medium">
@@ -139,11 +139,11 @@ const Experience = () => {
                     </div>
                     
                     <div className="flex flex-col md:items-end mt-2 md:mt-0">
-                      <div className="flex items-center text-gray-400 text-sm mb-1">
+                      <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-1">
                         <FiCalendar className="w-4 h-4 mr-1" />
                         {exp.period}
                       </div>
-                      <div className="flex items-center text-gray-400 text-sm">
+                      <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
                         <FiMapPin className="w-4 h-4 mr-1" />
                         {exp.location}
                       </div>
@@ -166,9 +166,9 @@ const Experience = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: (index * 0.2) + (itemIndex * 0.1) }}
                         viewport={{ once: true }}
-                        className="text-gray-300 flex items-start"
+                        className="text-gray-700 dark:text-gray-300 flex items-start"
                       >
-                        <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-blue-500 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         {item}
                       </motion.li>
                     ))}
