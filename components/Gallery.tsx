@@ -93,7 +93,7 @@ const Gallery = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 index === 0 
                   ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
+                  : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               {category}
@@ -129,9 +129,9 @@ const Gallery = () => {
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-gray-700 rounded-lg flex items-center justify-center mb-3 mx-auto">
-                        <FiZoomIn className="w-8 h-8 text-gray-400" />
+                        <FiZoomIn className="w-8 h-8 text-gray-500 dark:text-gray-400" />
                       </div>
-                      <p className="text-sm text-gray-400">Image Placeholder</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">Image Placeholder</p>
                     </div>
                   </div>
                 )}
@@ -156,10 +156,10 @@ const Gallery = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -175,14 +175,14 @@ const Gallery = () => {
           viewport={{ once: true }}
           className="mt-16 bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-8"
         >
-          <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
             📸 Photo Suggestions for Your Portfolio
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-800/30 p-4 rounded-lg">
-              <h4 className="text-blue-400 font-medium mb-2">Professional</h4>
-              <ul className="text-sm text-gray-300 space-y-1">
+            <div className="bg-gray-200/30 dark:bg-gray-800/30 p-4 rounded-lg">
+              <h4 className="text-blue-600 dark:text-blue-400 font-medium mb-2">Professional</h4>
+              <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
                 <li>• Headshot/professional portrait</li>
                 <li>• Workspace/development setup</li>
                 <li>• Speaking at events</li>
@@ -190,9 +190,9 @@ const Gallery = () => {
               </ul>
             </div>
             
-            <div className="bg-gray-800/30 p-4 rounded-lg">
-              <h4 className="text-purple-400 font-medium mb-2">Technical</h4>
-              <ul className="text-sm text-gray-300 space-y-1">
+            <div className="bg-gray-200/30 dark:bg-gray-800/30 p-4 rounded-lg">
+              <h4 className="text-purple-600 dark:text-purple-400 font-medium mb-2">Technical</h4>
+              <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
                 <li>• RTSP YOLO API screenshots</li>
                 <li>• Jetson Xavier deployment</li>
                 <li>• Code snippets/terminal</li>
@@ -200,9 +200,9 @@ const Gallery = () => {
               </ul>
             </div>
             
-            <div className="bg-gray-800/30 p-4 rounded-lg">
-              <h4 className="text-pink-400 font-medium mb-2">Creative</h4>
-              <ul className="text-sm text-gray-300 space-y-1">
+            <div className="bg-gray-200/30 dark:bg-gray-800/30 p-4 rounded-lg">
+              <h4 className="text-pink-600 dark:text-pink-400 font-medium mb-2">Creative</h4>
+              <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
                 <li>• Pixel 6a filming setup</li>
                 <li>• Premiere Pro workspace</li>
                 <li>• Behind-the-scenes shots</li>

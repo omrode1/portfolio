@@ -42,7 +42,7 @@ const Contact = () => {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             I'm always interested in discussing new opportunities, innovative projects, 
             or collaborations in computer vision and machine learning.
           </p>
@@ -57,7 +57,7 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-semibold text-white mb-8">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">
                 Let's Connect
               </h3>
               
@@ -81,10 +81,10 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400 group-hover:text-gray-300">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300">
                         {item.label}
                       </p>
-                      <p className="text-white group-hover:text-primary-300 transition-colors duration-300">
+                      <p className="text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors duration-300">
                         {item.value}
                       </p>
                     </div>
@@ -99,10 +99,10 @@ const Contact = () => {
                 viewport={{ once: true }}
                 className="mt-8 p-6 bg-gradient-to-r from-primary-600/10 to-accent-600/10 border border-primary-500/20 rounded-xl"
               >
-                <h4 className="text-lg font-semibold text-white mb-3">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                   Open to Opportunities
                 </h4>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   Currently exploring opportunities in Computer Vision, Machine Learning Engineering, 
                   and AI/ML roles. Particularly interested in projects involving RTSP systems, 
                   edge deployment, and real-time video processing.
@@ -118,40 +118,40 @@ const Contact = () => {
               viewport={{ once: true }}
               className="bg-gray-900/50 p-8 rounded-xl border border-gray-700"
             >
-              <h3 className="text-2xl font-semibold text-white mb-6">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
                 Send a Message
               </h3>
               
               <form className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Name
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors duration-300"
                     placeholder="Your Name"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Email
                   </label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors duration-300"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Message
                   </label>
                   <textarea
                     rows={5}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors duration-300 resize-none"
                     placeholder="Tell me about your project or opportunity..."
                   />
                 </div>

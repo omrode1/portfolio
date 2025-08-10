@@ -45,18 +45,18 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-        <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-  I’m a Computer Vision Engineer at <span className="text-blue-400 font-medium">Quantic Tech Analysis</span>, 
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+  I'm a Computer Vision Engineer at <span className="text-blue-600 dark:text-blue-400 font-medium">Quantic Tech Analysis</span>, 
   where I design and deploy ML pipelines for object detection and anomaly tracking in real-time RTSP video streams.
 </p>
 
-<p className="text-lg text-gray-300 mb-6 leading-relaxed">
-  Previously, I was a Robotics Intern at <span className="text-blue-400 font-medium">Solar Industries India Ltd.</span> 
-  and served as Team Captain of <span className="text-purple-400 font-medium">Formula Ashwariders</span> in Formula Student, 
+<p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+  Previously, I was a Robotics Intern at <span className="text-blue-600 dark:text-blue-400 font-medium">Solar Industries India Ltd.</span> 
+  and served as Team Captain of <span className="text-purple-600 dark:text-purple-400 font-medium">Formula Ashwariders</span> in Formula Student, 
   leading electronics and data acquisition while managing a 27-member team.
 </p>
 
-<p className="text-lg text-gray-300 mb-8 leading-relaxed">
+<p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
   My expertise includes YOLO-based custom training, CUDA optimization, multi-threaded Python development, 
   and robust RTSP-based deployments. I focus on building production-ready AI systems that move seamlessly 
   from prototype to real-world automation.
@@ -78,7 +78,7 @@ const About = () => {
                 className="bg-white/70 dark:bg-gray-900/50 p-6 rounded-xl border border-gray-300 dark:border-gray-700 hover:border-blue-500/50 transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 mt-1">
+                  <div className="text-blue-600 dark:text-blue-400 mt-1">
                     {item.icon}
                   </div>
                   <div>

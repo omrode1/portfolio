@@ -61,9 +61,9 @@ const Blog = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
                     <div className="p-2 bg-blue-600/20 rounded-lg mr-3">
-                      <FiLinkedin className="w-5 h-5 text-blue-400" />
+                      <FiLinkedin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <div className="flex items-center text-sm text-gray-400">
+                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                       <FiCalendar className="w-4 h-4 mr-1" />
                       {new Date(post.date).toLocaleDateString('en-US', { 
                         month: 'short', 
@@ -74,16 +74,16 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300">
                   {post.title}
                 </h3>
 
-                <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
                     {post.engagement}
                   </span>
                   <motion.a
@@ -91,7 +91,7 @@ const Blog = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
-                    className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300"
                   >
                     <FiExternalLink size={18} />
                   </motion.a>

@@ -197,11 +197,11 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-primary-300 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors duration-300">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-300 mb-4 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -214,7 +214,7 @@ const Projects = () => {
                 )}
 
                 <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies Used:</h4>
+                  <h4 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-3">Technologies Used:</h4>
                   <div className="grid grid-cols-3 gap-4">
                     {project.tech.map((tech, techIndex) => {
                       const logoPath = techLogoMap[tech];
@@ -248,7 +248,7 @@ const Projects = () => {
                           </motion.div>
                           
                           {/* Label */}
-                          <span className="text-xs text-gray-400 text-center mt-2 font-medium">
+                          <span className="text-xs text-gray-600 dark:text-gray-400 text-center mt-2 font-medium">
                             {tech}
                           </span>
                         </motion.div>
@@ -264,7 +264,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
-                      className="text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                      className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
                     >
                       <FiGithub size={20} />
                     </motion.a>

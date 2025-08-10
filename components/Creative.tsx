@@ -43,7 +43,7 @@ const Creative = () => {
             Creative <span className="gradient-text">Side</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Beyond code and algorithms, I love capturing moments and creating visual stories through photography and videography
           </p>
         </motion.div>
@@ -66,57 +66,18 @@ const Creative = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 {skill.title}
               </h3>
               
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 {skill.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Equipment & Tools */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 rounded-xl p-8 mb-16"
-        >
-          <h3 className="text-2xl font-semibold text-white mb-6 text-center">
-            My Creative Arsenal
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-lg font-medium text-purple-400 mb-3">Equipment</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                  Google Pixel 6a - Advanced computational photography
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                  Various lighting setups and accessories
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium text-pink-400 mb-3">Software</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-3"></div>
-                  Adobe Premiere Pro - Professional video editing
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-3"></div>
-                  Advanced knowledge of cuts and camera angles
-                </li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
+
 
         {/* Instagram Feed */}
         <motion.div
@@ -126,10 +87,10 @@ const Creative = () => {
           viewport={{ once: true }}
         >
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Latest from <span className="text-pink-400">Instagram</span>
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Latest from <span className="text-pink-600 dark:text-pink-400">Instagram</span>
             </h3>
-            <p className="text-gray-300">Follow my creative journey @om_rode.exe</p>
+            <p className="text-gray-700 dark:text-gray-300">Follow my creative journey @om_rode.exe</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -144,7 +105,7 @@ const Creative = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="group relative aspect-square bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-pink-500/50 transition-all duration-300"
+                className="group relative aspect-square bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-300 dark:border-gray-700 hover:border-pink-500/50 transition-all duration-300"
               >
                 {/* Real Instagram image */}
                 <Image

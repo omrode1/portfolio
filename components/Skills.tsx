@@ -67,7 +67,7 @@ const Skills = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Skills & <span className="gradient-text">Tech Stack</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-6">
             Specializing in AI, Computer Vision, DevOps, and Embedded Systems
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto"></div>
