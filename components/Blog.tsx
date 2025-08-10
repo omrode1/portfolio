@@ -21,9 +21,9 @@ const Blog = () => {
             Recent <span className="gradient-text">Posts</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+          {/* <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Sharing insights on Computer Vision, Machine Learning, and emerging technologies
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

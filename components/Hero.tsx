@@ -124,7 +124,7 @@ const Hero = () => {
               <FiLinkedin size={24} />
             </motion.a>
             <motion.a
-              href="mailto:omrode1@gmail.com"
+              href="mailto:omrode.work@gmail.com"
               whileHover={{ scale: 1.2, rotate: 5 }}
               className="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >

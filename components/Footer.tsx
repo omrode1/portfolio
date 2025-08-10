@@ -19,7 +19,7 @@ const Footer = () => {
     },
     {
       icon: <FiMail className="w-5 h-5" />,
-      href: "mailto:omrode1@gmail.com",
+      href: "mailto:omrode.work@gmail.com",
       label: "Email"
     }
   ]

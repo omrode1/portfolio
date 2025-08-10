@@ -66,6 +66,6 @@ This project is optimized for deployment on Vercel:
 
 ## Contact
 
-- **Email**: omrode1@gmail.com
+- **Email**: omrode.work@gmail.com
 - **GitHub**: [github.com/omrode1](https://github.com/omrode1)
 - **LinkedIn**: [linkedin.com/in/om-rode](https://linkedin.com/in/om-rode)

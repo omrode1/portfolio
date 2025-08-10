@@ -46,9 +46,9 @@ const Instagram = () => {
             Instagram <span className="gradient-text">Posts</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+          {/* <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Follow my journey in AI, Computer Vision, and Robotics
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Instagram Grid */}

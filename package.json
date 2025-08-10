@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "framer-motion": "^10.16.16",
     "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
