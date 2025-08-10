@@ -1,9 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FiGithub, FiExternalLink, FiCpu, FiCamera, FiZap } from 'react-icons/fi'
-import Card3D from './Card3D'
-import { StaggerContainer, RevealItem } from './ScrollAnimations'
+import { FiGithub, FiCpu, FiCamera, FiZap } from 'react-icons/fi'
 import TechLogo from './TechLogo'
 
 const Projects = () => {
@@ -167,131 +165,129 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="section-padding bg-gray-100/50 dark:bg-gray-800/50">
+    <section id="projects" className="section-padding bg-gray-100/50 dark:bg-gray-800/50 relative z-10">
       <div className="container-width">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          viewport={{ once: true, amount: 0.1 }}
+          className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto"></div>
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto"></div>
         </motion.div>
 
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
-            <RevealItem key={index} direction="up" delay={index * 0.1}>
-              <Card3D className="h-full">
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="bg-gray-900/50 rounded-xl border border-gray-700 hover:border-primary-500/50 transition-all duration-300 overflow-hidden group h-full backdrop-blur-sm"
-                >
-              <div className="p-6">
-                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${project.gradient} mb-4`}>
-                  <div className="text-white">
-                    {project.icon}
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
+              className="h-full"
+            >
+              <div className="bg-gray-900/50 rounded-xl border border-gray-700 hover:border-primary-500/50 transition-all duration-300 overflow-hidden group h-full backdrop-blur-sm hover:shadow-lg hover:shadow-primary-500/10">
+                <div className="p-4 md:p-6">
+                  <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${project.gradient} mb-4`}>
+                    <div className="text-white">
+                      {project.icon}
+                    </div>
                   </div>
-                </div>
 
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors duration-300">
-                  {project.title}
-                </h3>
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors duration-300">
+                    {project.title}
+                  </h3>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
 
-                {project.period && (
-                  <div className="mb-4">
-                    <span className="text-sm bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full">
-                      {project.period}
-                    </span>
-                  </div>
-                )}
-
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-3">Technologies Used:</h4>
-                  <div className="grid grid-cols-3 gap-4">
-                    {project.tech.map((tech, techIndex) => {
-                      const logoPath = techLogoMap[tech];
-                      return (
-                        <motion.div
-                          key={techIndex}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: techIndex * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex flex-col items-center group/tech"
-                        >
-                          <motion.div
-                            whileHover={{ 
-                              scale: 1.05,
-                              boxShadow: "0 0 15px rgba(59, 130, 246, 0.2)"
-                            }}
-                            className="bg-gray-800/70 p-3 rounded-lg border border-gray-700 hover:border-primary-500/50 transition-all duration-300 cursor-pointer"
-                          >
-                            {logoPath ? (
-                              <TechLogo 
-                                name="" 
-                                src={logoPath} 
-                                alt={`${tech} logo`} 
-                                size={40}
-                                className="flex-shrink-0"
-                              />
-                            ) : (
-                              <div className="w-8 h-8 bg-gray-600 rounded flex-shrink-0"></div>
-                            )}
-                          </motion.div>
-                          
-                          {/* Label */}
-                          <span className="text-xs text-gray-600 dark:text-gray-400 text-center mt-2 font-medium">
-                            {tech}
-                          </span>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="flex space-x-4">
-                  {project.github && (
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      <FiGithub size={20} />
-                    </motion.a>
+                  {project.period && (
+                    <div className="mb-4">
+                      <span className="text-xs md:text-sm bg-blue-600/20 text-blue-300 px-2 md:px-3 py-1 rounded-full">
+                        {project.period}
+                      </span>
+                    </div>
                   )}
+
+                  <div className="mb-6">
+                    <h4 className="text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400 mb-3">Technologies Used:</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+                      {project.tech.map((tech, techIndex) => {
+                        const logoPath = techLogoMap[tech];
+                        return (
+                          <motion.div
+                            key={techIndex}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: techIndex * 0.05 }}
+                            viewport={{ once: true }}
+                            className="flex flex-col items-center group/tech"
+                          >
+                            <div className="bg-gray-800/70 p-2 md:p-3 rounded-lg border border-gray-700 hover:border-primary-500/50 transition-all duration-300">
+                              {logoPath ? (
+                                <TechLogo 
+                                  name="" 
+                                  src={logoPath} 
+                                  alt={`${tech} logo`} 
+                                  size={32}
+                                  className="flex-shrink-0"
+                                />
+                              ) : (
+                                <div className="w-6 h-6 md:w-8 md:h-8 bg-gray-600 rounded flex-shrink-0"></div>
+                              )}
+                            </div>
+                            
+                            {/* Label */}
+                            <span className="text-xs text-gray-600 dark:text-gray-400 text-center mt-2 font-medium line-clamp-2">
+                              {tech}
+                            </span>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-4">
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                      >
+                        <FiGithub size={18} />
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </div>
-                </motion.div>
-              </Card3D>
-            </RevealItem>
+            </motion.div>
           ))}
-        </StaggerContainer>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
+          viewport={{ once: true, amount: 0.1 }}
+          className="text-center mt-8 md:mt-12"
         >
           <motion.a
             href="https://github.com/omrode1"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300"
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 text-sm md:text-base"
           >
-            <FiGithub size={20} />
+            <FiGithub size={18} />
             <span>View All Projects on GitHub</span>
           </motion.a>
         </motion.div>

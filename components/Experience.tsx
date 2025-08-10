@@ -7,27 +7,27 @@ import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi'
 const Experience = () => {
   const experiences = [
     {
-      title: "Computer Vision Engineer",
-      company: "Quantic Tech Analysis Private Limited",
+      title: "AI Engineer I (Computer Vision)",
+      company: "Quantic Tech Analysis",
       period: "July 2024 – Present",
       location: "Chennai, India",
       description: [
-        "Developed ML pipelines for object detection and anomaly tracking in RTSP video environments",
-        "Deployed models on Jetson devices with quantization and CUDA acceleration",
-        "Optimized real-time video processing systems for industrial automation"
+        "Automated MLOps workflows for data collection, transformation, and model training, improving pipeline efficiency",
+        "Led model development(ML Flow), including data evaluation, weight transfer between models(WandB), and deployment in production environments with optimized quantization(ONNX/TensorRT)",
+        "Developed robust solutions for RTSP environments, CUDA-based server/Jetson installations, and multi-threaded Python apps for simultaneous detection and cloud operations(MongoDB)"
       ],
       current: true,
       logo: "/images/companies/quantic_tech_analysis_private_limited_logo.jpeg"
     },
     {
-      title: "Robotics Intern - Computer Vision",
-      company: "Solar Industries India Ltd.",
-      period: "November 2023 - June 2024",
+      title: "Robotics Intern (Computer Vision)",
+      company: "Solar Industries India Limited",
+      period: "Dec 2023 – June 2024",
       location: "Nagpur, India",
       description: [
-        "Worked on robotics automation systems for industrial applications",
-        "Developed embedded systems for autonomous operations", 
-        "Collaborated on safety and monitoring systems"
+        "Developed autonomous drone systems using ROS, DroneKit, and Gazebo; implemented multithreaded CV pipelines for target following, obstacle avoidance, and PID-tuned flight tested in tethered environments",
+        "Deployed a YOLO-based worker occupancy system with PostgreSQL for real-time tracking and entry/exit logging",
+        "Managed 30+ camera feeds in a multithreaded architecture on NVIDIA A1000 for high-throughput inference"
       ],
       current: false,
       logo: "/images/companies/Solar.png"

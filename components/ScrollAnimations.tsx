@@ -80,21 +80,46 @@ export const ScrollProgress = () => {
   )
 }
 
-// Mouse follower effect
+// Mouse follower effect - only shows on devices with mouse support
 export const MouseFollower = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [isMouseDevice, setIsMouseDevice] = useState(false)
 
   useEffect(() => {
+    // Check if device supports mouse interactions
+    const checkMouseSupport = () => {
+      // Check if device has mouse capability or is not a touch device
+      const hasMouse = window.matchMedia('(pointer: fine)').matches
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+      
+      // Only show on devices with fine pointer (mouse) and not primarily touch devices
+      setIsMouseDevice(hasMouse && !isTouchDevice)
+    }
+
+    checkMouseSupport()
+    
+    // Re-check on resize (in case of device orientation change)
+    window.addEventListener('resize', checkMouseSupport)
+
     const handleMouseMove = (e: MouseEvent) => {
+      if (!isMouseDevice) return
+      
       setMousePosition({
         x: e.clientX,
         y: e.clientY
       })
     }
 
-    const handleMouseEnter = () => setIsHovering(true)
-    const handleMouseLeave = () => setIsHovering(false)
+    const handleMouseEnter = () => {
+      if (!isMouseDevice) return
+      setIsHovering(true)
+    }
+    
+    const handleMouseLeave = () => {
+      if (!isMouseDevice) return
+      setIsHovering(false)
+    }
 
     // Add listeners to interactive elements
     const interactiveElements = document.querySelectorAll('a, button, [role="button"]')
@@ -107,12 +132,18 @@ export const MouseFollower = () => {
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('resize', checkMouseSupport)
       interactiveElements.forEach(el => {
         el.removeEventListener('mouseenter', handleMouseEnter)
         el.removeEventListener('mouseleave', handleMouseLeave)
       })
     }
-  }, [])
+  }, [isMouseDevice])
+
+  // Don't render anything on non-mouse devices
+  if (!isMouseDevice) {
+    return null
+  }
 
   return (
     <motion.div

@@ -4,8 +4,7 @@ import About from '@/components/About'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Experience from '@/components/Experience'
-import Creative from '@/components/Creative'
-import Gallery from '@/components/Gallery'
+import Instagram from '@/components/Instagram'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -27,8 +26,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Experience />
-        <Creative />
-        <Gallery />
+        <Instagram />
         <Blog />
         <Contact />
         <Footer />

@@ -91,6 +91,12 @@ const Hero = () => {
             >
               View My Work
             </MagneticButton>
+            <MagneticButton
+              onClick={() => window.open('/resume.pdf', '_blank')}
+              className="border border-green-600 text-green-400 px-8 py-3 rounded-lg font-medium hover:bg-green-600/10 transition-all duration-300"
+            >
+              View Resume
+            </MagneticButton>
           </motion.div>
 
           <motion.div
