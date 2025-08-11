@@ -56,33 +56,6 @@ const Projects = () => {
       }
     },
     {
-      title: "AI Chess Engine – Deep RL",
-      description: "Built and trained a chess-playing AI agent using Deep Reinforcement Learning with DQN, custom reward shaping, and curriculum learning in Stable Baselines3.",
-      tech: ["Python"],
-      github: "https://github.com/omrode1/Chess-Engine-RL",
-      period: "March 2025 – Present",
-      icon: <FiCpu className="w-6 h-6" />,
-      gradient: "from-purple-500 to-pink-500",
-      media: {
-        images: [],
-        videos: [],
-        documents: []
-      }
-    },
-    {
-      title: "UAV Obstacle Avoidance",
-      description: "Developed a camera and LiDAR-based system for drones to autonomously detect and avoid obstacles, ensuring safe and efficient flight paths.",
-      tech: ["ROS", "Python", "Computer Vision"],
-      period: "December 2023 – June 2024",
-      icon: <FiZap className="w-6 h-6" />,
-      gradient: "from-green-500 to-teal-500",
-      media: {
-        images: [],
-        videos: [],
-        documents: []
-      }
-    },
-    {
       title: "Operator Occupancy Detection",
       description: "Implemented a vision-based system to monitor operator presence, log entry/exit times, and generate efficiency reports via RTSP stream analysis.",
       tech: ["Python", "Computer Vision", "Pandas"],
@@ -118,7 +91,7 @@ const Projects = () => {
       media: {
         images: [],
         videos: [],
-        documents: []
+        documents: ["/Intel_UGC_Summer2023.pdf"]
       }
     },
     {
@@ -251,6 +224,111 @@ const Projects = () => {
                       })}
                     </div>
                   </div>
+
+                  {/* Media Section */}
+                  {(project.media?.images?.length > 0 || project.media?.videos?.length > 0 || project.media?.documents?.length > 0) && (
+                    <div className="mb-6">
+                      <h4 className="text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400 mb-3">Media & Documents:</h4>
+                      
+                      {/* Images */}
+                      {project.media?.images?.length > 0 && (
+                        <div className="mb-3">
+                          <h5 className="text-xs text-gray-500 dark:text-gray-500 mb-2">Images:</h5>
+                          <div className="grid grid-cols-2 gap-2">
+                            {project.media?.images?.map((image, imgIndex) => (
+                              <motion.div
+                                key={imgIndex}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3, delay: imgIndex * 0.1 }}
+                                viewport={{ once: true }}
+                                className="relative group"
+                              >
+                                <img
+                                  src={image}
+                                  alt={`${project.title} image ${imgIndex + 1}`}
+                                  className="w-full h-20 object-cover rounded-lg border border-gray-700 hover:border-primary-500/50 transition-all duration-300 cursor-pointer"
+                                  onClick={() => window.open(image, '_blank')}
+                                />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded-lg flex items-center justify-center">
+                                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-medium">
+                                    Click to view
+                                  </div>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Videos */}
+                      {project.media?.videos?.length > 0 && (
+                        <div className="mb-3">
+                          <h5 className="text-xs text-gray-500 dark:text-gray-500 mb-2">Videos:</h5>
+                          <div className="space-y-2">
+                            {project.media?.videos?.map((video, vidIndex) => (
+                              <motion.div
+                                key={vidIndex}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3, delay: vidIndex * 0.1 }}
+                                viewport={{ once: true }}
+                                className="relative group"
+                              >
+                                <video
+                                  src={video}
+                                  controls
+                                  className="w-full h-24 object-cover rounded-lg border border-gray-700 hover:border-primary-500/50 transition-all duration-300"
+                                  preload="metadata"
+                                />
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Documents */}
+                      {project.media?.documents?.length > 0 && (
+                        <div className="mb-3">
+                          <h5 className="text-xs text-gray-500 dark:text-gray-500 mb-2">Documents:</h5>
+                          <div className="space-y-2">
+                            {project.media?.documents?.map((document, docIndex) => (
+                              <motion.div
+                                key={docIndex}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3, delay: docIndex * 0.1 }}
+                                viewport={{ once: true }}
+                              >
+                                <motion.a
+                                  href={document}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  whileHover={{ scale: 1.02 }}
+                                  whileTap={{ scale: 0.98 }}
+                                  className="flex items-center space-x-2 bg-gray-800/70 hover:bg-gray-700/70 border border-gray-700 hover:border-primary-500/50 rounded-lg px-3 py-2 transition-all duration-300 group"
+                                >
+                                  <div className="w-8 h-8 bg-red-600/20 rounded flex items-center justify-center">
+                                    <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                                    </svg>
+                                  </div>
+                                  <span className="text-xs text-gray-300 group-hover:text-white transition-colors duration-300">
+                                    {document.split('/').pop()?.replace(/\.[^/.]+$/, '') || 'Document'}
+                                  </span>
+                                  <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                  </div>
+                                </motion.a>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   <div className="flex space-x-4">
                     {project.github && (
