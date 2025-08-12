@@ -95,6 +95,9 @@ const Footer = () => {
           <p className="text-gray-500 text-xs">
             Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion
           </p>
+          <p className="text-gray-600 text-xs mt-1 opacity-60 hover:opacity-100 transition-opacity duration-300">
+            🥚 There's a hidden feature somewhere... can you find it?
+          </p>
         </motion.div>
       </div>
     </footer>
