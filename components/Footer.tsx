@@ -14,7 +14,7 @@ const Footer = () => {
     },
     {
       icon: <FiLinkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/om-rode",
+      href: "https://www.linkedin.com/in/om-rode-b51520202/",
       label: "LinkedIn"
     },
     {

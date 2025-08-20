@@ -69,7 +69,7 @@ const Contact = () => {
       icon: <FiLinkedin className="w-6 h-6" />,
       label: "LinkedIn",
       value: "linkedin.com/in/om-rode",
-      href: "https://linkedin.com/in/om-rode",
+      href: "https://www.linkedin.com/in/om-rode-b51520202/",
       color: "from-blue-600 to-blue-800"
     }
   ]

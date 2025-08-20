@@ -59,5 +59,5 @@ End-to-end system for real-time log ingestion, AI anomaly detection, and automat
 
 ## Contact
 - Email: omrode.work@gmail.com  
-- LinkedIn: [linkedin.com/in/om-rode-b51520202](https://www.linkedin.com/in/om-rode-b51520202/)  
+- LinkedIn: [linkedin.com/in/om-rode-b51520202](https://www.linkedin.com/in/om-rode-b51520202/-b51520202/)  
 - GitHub: [github.com/omrode1](https://github.com/omrode1)

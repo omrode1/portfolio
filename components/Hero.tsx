@@ -115,7 +115,7 @@ const Hero = () => {
               <FiGithub size={24} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/om-rode"
+              href="https://www.linkedin.com/in/om-rode-b51520202/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: -5 }}

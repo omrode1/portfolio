@@ -109,7 +109,7 @@ const Blog = () => {
           className="text-center"
         >
           <motion.a
-            href="https://www.linkedin.com/in/om-rode"
+            href="https://www.linkedin.com/in/om-rode-b51520202/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
